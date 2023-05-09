@@ -1,13 +1,15 @@
 import CarForm from "./CarForm";
 
 type Props = {
-//   id?: string[];
+  id?: string[];
   open: boolean;
   onClose: () => void;
 }
 
 const Modal = ( props: Props) => {
     if ( !props.open ) return null;
+    console.log(props.id);
+    
     return (
         <div 
             className="fixed w-full h-full flex overflow-auto z-1 justify-center align-middle"
@@ -25,7 +27,7 @@ const Modal = ( props: Props) => {
                             onClick={props.onClose}>X</p>
                     </div>
                     <div className="flex p-3 m-5 flex-col items-center text-center">
-                        <CarForm />
+                        <CarForm id={ props.id }/>
                     </div>
                 </div>
             </div>
